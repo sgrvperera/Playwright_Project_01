@@ -1,0 +1,22 @@
+{
+  "name": "playwright_project_01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "test": "npx playwright test",
+  "test:headed": "npx playwright test --headed",
+  "test:report": "npx playwright show-report",
+  "test:ci": "npx playwright test --reporter=list,junit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "playwright": "^1.58.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
