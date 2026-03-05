@@ -1,10 +1,15 @@
 import { PlaywrightTestConfig } from '@playwright/test';
+import './utils/env';
 
 const config: PlaywrightTestConfig = {
   testDir: 'tests',
   timeout: 30000,
-  retries: 0,
-  reporter: [['list'], ['html', { outputFolder: 'reports/html' }]],
+  retries: process.env.CI ? 2 : 0, // retry in CI to reduce flakes
+  reporter: [
+    ['list'],
+    ['junit', { outputFile: 'test-results/junit-results.xml' }],
+    ['html', { outputFolder: 'reports/html' }]
+  ],
   use: {
     headless: true,
     viewport: { width: 1280, height: 720 },

@@ -31,8 +31,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests (headless)
-        # produce list and junit output and html report
-        run: npx playwright test --reporter=list,junit --workers=2
+        run: npx playwright test --workers=2
 
       - name: Upload Playwright JUnit results
         if: always()
