@@ -23,6 +23,6 @@ export class CartPage {
     const deleteBtn = this.page.locator(`${this.rowsSelector} a`).first();
     await deleteBtn.click();
     // wait for the row to be removed
-    await this.page.waitForTimeout(800);
+    await this.page.waitForSelector(`${this.rowsSelector}`, { state: 'hidden' });
   }
 }

@@ -1,0 +1,6 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.648759999999998">
+<testsuite name="e2e\add-to-cart.spec.ts" timestamp="2026-03-05T04:48:37.698Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.527" errors="0">
+<testcase name="add product to cart and verify it appears in cart" classname="e2e\add-to-cart.spec.ts" time="8.527">
+</testcase>
+</testsuite>
+</testsuites>

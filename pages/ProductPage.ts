@@ -21,7 +21,6 @@ export class ProductPage {
       await dialog.accept();
     });
     await this.page.click(this.addToCartBtn);
-    // small pause to ensure cart action completes (or use waitForResponse if API known)
-    await this.page.waitForTimeout(1000);
+    
   }
 }
