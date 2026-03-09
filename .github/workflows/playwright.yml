@@ -10,7 +10,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     env:
-      # these will be populated from the repository secrets (see next step)
+      # pin a stable API for tests in CI
+      API_BASE_URL: "https://dummyjson.com"
+      # secrets for credentials (keep secrets in GitHub)
       TEST_USER: ${{ secrets.TEST_USER }}
       TEST_PASS: ${{ secrets.TEST_PASS }}
 
@@ -29,6 +31,13 @@ jobs:
 
       - name: Install Playwright browsers and dependencies
         run: npx playwright install --with-deps
+
+      - name: Print API_BASE_URL (debug)
+        run: |
+          echo "----- debug: CI env -----"
+          echo "API_BASE_URL=${API_BASE_URL}"
+          echo "TEST_USER is set: ${TEST_USER:+yes}"
+          echo "------------------------"
 
       - name: Run Playwright tests (headless)
         run: npx playwright test --workers=2
