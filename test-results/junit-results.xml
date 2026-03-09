@@ -1,6 +1,20 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="12.648759999999998">
-<testsuite name="e2e\add-to-cart.spec.ts" timestamp="2026-03-05T04:48:37.698Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.527" errors="0">
-<testcase name="add product to cart and verify it appears in cart" classname="e2e\add-to-cart.spec.ts" time="8.527">
+<testsuites id="" name="" tests="5" failures="0" skipped="0" errors="0" time="12.329128999999998">
+<testsuite name="api\auth.spec.ts" timestamp="2026-03-09T08:03:59.233Z" hostname="chromium" tests="1" failures="0" skipped="0" time="0.639" errors="0">
+<testcase name="API smoke (stable public endpoints) › GET /products/1 returns product and 200" classname="api\auth.spec.ts" time="0.639">
+</testcase>
+</testsuite>
+<testsuite name="api\products.spec.ts" timestamp="2026-03-09T08:03:59.233Z" hostname="chromium" tests="2" failures="0" skipped="0" time="1.228" errors="0">
+<testcase name="Products API › GET /products returns list and status 200" classname="api\products.spec.ts" time="0.938">
+</testcase>
+<testcase name="Products API › GET /products/:id returns correct product" classname="api\products.spec.ts" time="0.29">
+</testcase>
+</testsuite>
+<testsuite name="e2e\add-to-cart.spec.ts" timestamp="2026-03-09T08:03:59.233Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.514" errors="0">
+<testcase name="add product to cart and verify it appears in cart" classname="e2e\add-to-cart.spec.ts" time="8.514">
+</testcase>
+</testsuite>
+<testsuite name="e2e\login.spec.ts" timestamp="2026-03-09T08:03:59.233Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.231" errors="0">
+<testcase name="login with valid credentials" classname="e2e\login.spec.ts" time="6.231">
 </testcase>
 </testsuite>
 </testsuites>
