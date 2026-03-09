@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # these will be populated from the repository secrets (see next step)
-      TEST_USER= ${{ secrets.TEST_USER }}
-      TEST_PASS= ${{ secrets.TEST_PASS }}
+      TEST_USER: ${{ secrets.TEST_USER }}
+      TEST_PASS: ${{ secrets.TEST_PASS }}
 
     steps:
       - name: Checkout repository
