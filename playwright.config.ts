@@ -5,6 +5,7 @@ const config: PlaywrightTestConfig = {
   testDir: 'tests',
   timeout: 30000,
   retries: process.env.CI ? 2 : 0, // retry in CI to reduce flakes
+  workers: 1, // 🛑 Force single worker for UI tests
   reporter: [
     ['list'],
     ['junit', { outputFile: 'test-results/junit-results.xml' }],

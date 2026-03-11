@@ -1,32 +1,25 @@
-// pages/ProductPage.ts
 import { Page } from '@playwright/test';
 
 export class ProductPage {
   readonly page: Page;
-  readonly addToCartBtn = 'a[onclick^="addToCart"]';
-  readonly productTitle = '.name';
 
   constructor(page: Page) {
     this.page = page;
   }
 
-  async getTitle() {
-    return this.page.textContent(this.productTitle);
+  async getTitle(): Promise<string | null> {
+    try {
+      const titleEl = await this.page.locator('h2.name').first();
+      return await titleEl.textContent();
+    } catch (err: unknown) {
+      if (err instanceof Error) console.log('DEBUG: getTitle error:', err.message);
+      else console.log('DEBUG: getTitle unknown error:', err);
+      return null;
+    }
   }
 
   async addToCart() {
-    // prepare to accept an alert if it appears
-    const dialogPromise = this.page.waitForEvent('dialog').catch(() => null);
-
-    // click add-to-cart; if a dialog appears we will accept it
-    await this.page.click(this.addToCartBtn);
-
-    const dialog = await dialogPromise;
-    if (dialog) {
-      try { await dialog.accept(); } catch (e) { console.log('DEBUG: dialog accept failed', String(e).slice(0,200)); }
-    }
-
-    // short, safe wait for UI to settle (not a long sleep) — remove if it causes flakiness
-    await this.page.waitForTimeout(300);
+    const addBtn = this.page.locator('a:has-text("Add to cart")').first();
+    await addBtn.click();
   }
 }
