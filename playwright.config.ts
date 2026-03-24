@@ -16,8 +16,8 @@ const config: PlaywrightTestConfig = {
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10000,
     ignoreHTTPSErrors: true,
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure'
+    screenshot: 'on',
+    video: 'on'
   },
   projects: [
     { name: 'chromium', use: { browserName: 'chromium' } },
