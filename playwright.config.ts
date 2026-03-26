@@ -9,7 +9,8 @@ const config: PlaywrightTestConfig = {
   reporter: [
     ['list'],
     ['junit', { outputFile: 'test-results/junit-results.xml' }],
-    ['html', { outputFolder: 'reports/html' }]
+    ['html', { outputFolder: 'reports/html' }],
+    ['allure-playwright', { outputFolder: 'allure-results' }],
   ],
   use: {
     headless: true,
@@ -17,12 +18,13 @@ const config: PlaywrightTestConfig = {
     actionTimeout: 10000,
     ignoreHTTPSErrors: true,
     screenshot: 'on',
-    video: 'on'
+    video: 'on',
+    trace: 'on',
   },
   projects: [
     { name: 'chromium', use: { browserName: 'chromium' } },
-    { name: 'firefox', use: { browserName: 'firefox' } },
-    { name: 'webkit', use: { browserName: 'webkit' } }
+    // { name: 'firefox', use: { browserName: 'firefox' } },
+    // { name: 'webkit', use: { browserName: 'webkit' } }
   ]
 };
 
