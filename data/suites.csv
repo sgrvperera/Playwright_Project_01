@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","29","GET /products/:id returns correct product","chromium","2026-03-27","passed","2026-03-27","Products API","api/products.spec.ts","",""
+"","2264","login with valid credentials","chromium","2026-03-27","passed","2026-03-27","","e2e/login.spec.ts","",""
+"","228","GET /products returns list and status 200","chromium","2026-03-27","passed","2026-03-27","Products API","api/products.spec.ts","",""
+"","4022","add product to cart","chromium","2026-03-27","passed","2026-03-27","","e2e/add-to-cart.spec.ts","",""
+"","189","GET /products/1 returns product and 200","chromium","2026-03-27","passed","2026-03-27","API smoke (stable public endpoints)","api/auth.spec.ts","",""
